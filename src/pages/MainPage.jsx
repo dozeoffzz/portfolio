@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import myblog from "../assets/imgs/myblog.webp";
+import myblog1728 from "../assets/imgs/myblog1728.webp";
 import mainprofile from "../assets/imgs/mainprofile.webp";
 import { NavLink } from "react-router-dom";
 
@@ -9,8 +10,10 @@ const Section = styled.div`
   width: 100%;
   height: 100vh;
   background-image: url(${myblog});
-  display: block;
-  object-fit: cover;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const LineDown = styled.div`
@@ -31,6 +34,11 @@ const LineDown = styled.div`
       height: 100px;
     }
   }
+
+  @media (max-width: 1728px) {
+    left: 51%;
+    top: 51%;
+  }
 `;
 
 const LineLeft = styled.div`
@@ -39,7 +47,7 @@ const LineLeft = styled.div`
   left: calc(51% - 100px);
   top: calc(61% + 100px);
 
-  width: 100px;
+  width: 102px;
   height: 2px;
 
   background: #00ff03;
@@ -54,6 +62,10 @@ const LineLeft = styled.div`
     to {
       transform: scaleX(1);
     }
+  }
+  @media (max-width: 1728px) {
+    left: calc(51% - 100px);
+    top: calc(51% + 100px);
   }
 `;
 
@@ -79,6 +91,10 @@ const LineUp = styled.div`
       transform: translateY(-100px);
     }
   }
+  @media (max-width: 1728px) {
+    left: calc(51% - 100px);
+    top: calc(51% + 100px);
+  }
 `;
 
 const LineRight = styled.div`
@@ -99,6 +115,10 @@ const LineRight = styled.div`
     to {
       width: 200px;
     }
+  }
+  @media (max-width: 1728px) {
+    left: calc(51% - 100px);
+    top: 51%;
   }
 `;
 
@@ -121,6 +141,10 @@ const ProfileArea = styled.div`
     to {
       opacity: 1;
     }
+  }
+  @media (max-width: 1728px) {
+    left: calc(51% + 100px);
+    top: calc(51% - 100px);
   }
 `;
 const ProfileName = styled.h1`
