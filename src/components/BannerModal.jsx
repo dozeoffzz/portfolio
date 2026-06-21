@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { AllGraphic, ModalGraphic } from "../apis/Graphic";
 import styled from "@emotion/styled";
 import close from "../assets/icons/close.svg";
 
@@ -53,25 +52,25 @@ const CenterImg = styled.img`
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  width: 600px;
+  width: 1100px;
 `;
 
 const PrevImg = styled.img`
   position: absolute;
-  left: -500px;
+  left: -1000px;
   top: 50%;
   transform: translateY(-50%);
-  width: 600px;
+  width: 1100px;
   opacity: 0.5;
   cursor: pointer;
 `;
 
 const NextImg = styled.img`
   position: absolute;
-  right: -500px;
+  right: -1000px;
   top: 50%;
   transform: translateY(-50%);
-  width: 600px;
+  width: 1100px;
   opacity: 0.5;
   cursor: pointer;
 `;
@@ -88,30 +87,8 @@ const ImgWrap = styled.div`
     object-fit: cover;
   }
 `;
-const AlbumInfo = styled.div`
-  position: absolute;
-  left: 100px;
-  bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  color: #fafafa;
-  z-index: 10;
-`;
 
-const AlbumDesign = styled.h2`
-  font-size: 52px;
-`;
-const AlbumName = styled.p`
-  font-size: 28px;
-  font-weight: 500;
-  font-family: "Pretendard";
-`;
-const AlbumInfoText = styled.p`
-  font-size: 24px;
-  font-family: "Pretendard";
-`;
-
-export default function GraphicModal({ isOpen, onClose, item, data, index }) {
+export default function BannerModal({ isOpen, onClose, item, data, index }) {
   if (!isOpen || index === null || !data?.length) {
     return null;
   }
@@ -141,12 +118,6 @@ export default function GraphicModal({ isOpen, onClose, item, data, index }) {
             <NextImg src={next.img} onClick={() => setCurrentIndex(nextIndex)} />
           </ImgWrap>
         </ImgTrack>
-
-        <AlbumInfo>
-          <AlbumDesign>Album Cover Design</AlbumDesign>
-          <AlbumName>{current.name}</AlbumName>
-          <AlbumInfoText>{current.info}</AlbumInfoText>
-        </AlbumInfo>
       </ImgContainer>
     </Overlay>,
     document.getElementById("modal-root"),

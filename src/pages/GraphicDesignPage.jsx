@@ -62,6 +62,7 @@ export default function GraphicDesignPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
+
   return (
     <Section>
       <GraphicContainer>
