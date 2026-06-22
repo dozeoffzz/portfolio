@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../assets/imgs/background.webp";
 import styled from "@emotion/styled";
 import choiwonhee from "../assets/imgs/choiwonhee.webp";
@@ -17,17 +17,89 @@ const Section = styled.div`
   font-family: "Pretendard";
 
   position: relative;
+  overflow: hidden;
 `;
 
-// const ResumeImg = styled.img`
-//   position: absolute;
-//   display: flex;
-//   z-index: 10;
-//   top: 100px;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// `;
+const ResumeImgWrap = styled.img`
+  padding: 100px 50px 50px 50px;
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  z-index: 10;
+
+  opacity: ${(props) => (props.hide ? 0 : 1)};
+  transition: opacity 0.8s ease;
+  pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+`;
+
+const ResumeCenterContainer = styled.div`
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  z-index: 14;
+  background-color: #fafafa;
+  border-radius: 30px;
+  border: 1px solid #0c0c0c;
+  width: 860px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity: ${(props) => (props.hide ? 0 : 1)};
+  transition: opacity 0.8s ease;
+  pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+`;
+
+const ImacIcon = styled.div`
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #0c0c0c;
+  display: flex;
+  gap: 20px;
+`;
+const ResumeCenterText = styled.p`
+  padding: 20px 0 10px 0;
+  font-size: 16px;
+  font-family: "Pretendard";
+  font-weight: 600;
+`;
+const MoreAboutMe = styled.button`
+  padding: 10px;
+  position: absolute;
+  bottom: -25px;
+  right: -25px;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  border-radius: 15px;
+  border: 1px solid #0c0c0c;
+  z-index: 18;
+`;
+const MoreAboutMeText = styled.p`
+  font-size: 20px;
+  color: blue;
+  text-decoration: underline;
+  font-weight: 500;
+`;
+
+const ImacIconRed = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff3b32;
+`;
+const ImacIconYellow = styled(ImacIconRed)`
+  background-color: #ffcd00;
+`;
+const ImacIconGreen = styled(ImacIconRed)`
+  background-color: #65d83d;
+`;
 
 const ResumeLeft = styled.div`
   display: flex;
@@ -103,7 +175,7 @@ const SkillLisenceText = styled.h3`
   width: 270px;
 `;
 
-const SkillText = styled.p`
+const SkillText = styled.div`
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -172,9 +244,36 @@ const Since = styled.h3`
 `;
 
 export default function ResumePage() {
+  const [none, isNone] = useState(false);
+
+  const handleView = () => {
+    isNone(true);
+  };
   return (
     <Section>
-      {/* <ResumeImg src={ResumeImg} alt="resumeimg" /> */}
+      <ResumeImgWrap src={ResumeImg} alt="resumeimg" hide={none} />
+      <ResumeCenterContainer hide={none}>
+        <ImacIcon>
+          <ImacIconRed />
+          <ImacIconYellow />
+          <ImacIconGreen />
+        </ImacIcon>
+        <ResumeCenterText>
+          안녕하세요. 저는 인테리어 디자인을 전공하며 공간과 디자인의 조화에 대해 배우고,
+          <br />
+          실무 경험을 통해 다양한 현장을 경험해왔습니다.
+          <br />
+          현장에서 다양한 경험을 하며 디자인이 단순히 시각적인 요소를 넘어
+          <br />
+          사용자 경험과 소통의 중요한 역할을 한다는 점에 큰 흥미를 느끼게 되었고,
+          <br />
+          디자인 결과물이 실시간으로 변동되고, 확인하는 웹디자이너에 흥미를 느끼게 되었습니다.
+          <br />내 기준이 아닌 사용자를 생각하고 디자인하는 웹디자이너가 되고자 합니다.
+        </ResumeCenterText>
+        <MoreAboutMe onClick={handleView}>
+          <MoreAboutMeText>More About Me</MoreAboutMeText>
+        </MoreAboutMe>
+      </ResumeCenterContainer>
       <ResumeLeft>
         <ResumeLeftWrap>
           <ResumeProfile>

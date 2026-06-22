@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   padding: 0 50px;
   height: 100px;
-  z-index: 10;
+  z-index: 20;
 `;
 
 const NavWrap = styled("div", {
