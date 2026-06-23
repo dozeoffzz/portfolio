@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import myblog from "../assets/imgs/myblog.webp";
-import myblog1728 from "../assets/imgs/myblog1728.webp";
+import myblogtablet from "../assets/imgs/myblogtablet.webp";
+import myblogphone from "../assets/imgs/myblogphone.webp";
 import mainprofile from "../assets/imgs/mainprofile.webp";
 import { NavLink } from "react-router-dom";
 
@@ -14,13 +15,21 @@ const Section = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    background-image: url(${myblogtablet});
+  }
+  @media (max-width: 440px) {
+    background-image: url(${myblogphone});
+  }
 `;
 
 const LineDown = styled.div`
   position: absolute;
 
   left: 51%;
-  top: 61%;
+  top: 51%;
 
   width: 2px;
   height: 0;
@@ -39,13 +48,35 @@ const LineDown = styled.div`
     left: 51%;
     top: 51%;
   }
+
+  @media (max-width: 1024px) {
+    left: 52%;
+    top: 50%;
+
+    @keyframes drawDown {
+      to {
+        height: 50px;
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    left: 56%;
+    top: 50%;
+
+    @keyframes drawDown {
+      to {
+        height: 50px;
+      }
+    }
+  }
 `;
 
 const LineLeft = styled.div`
   position: absolute;
 
   left: calc(51% - 100px);
-  top: calc(61% + 100px);
+  top: calc(51% + 100px);
 
   width: 102px;
   height: 2px;
@@ -67,13 +98,37 @@ const LineLeft = styled.div`
     left: calc(51% - 100px);
     top: calc(51% + 100px);
   }
+
+  @media (max-width: 1024px) {
+    width: 52px;
+    left: calc(52% - 50px);
+    top: calc(50% + 50px);
+
+    @keyframes drawLeft {
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    width: 52px;
+    left: calc(56% - 50px);
+    top: calc(50% + 50px);
+
+    @keyframes drawLeft {
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
 `;
 
 const LineUp = styled.div`
   position: absolute;
 
   left: calc(51% - 100px);
-  top: calc(61% + 100px);
+  top: calc(51% + 100px);
 
   width: 2px;
   height: 0;
@@ -95,13 +150,37 @@ const LineUp = styled.div`
     left: calc(51% - 100px);
     top: calc(51% + 100px);
   }
+
+  @media (max-width: 1024px) {
+    left: calc(52% - 50px);
+    top: calc(50% + 50px);
+
+    @keyframes drawUp {
+      to {
+        height: 50px;
+        transform: translateY(-50px);
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    left: calc(56% - 50px);
+    top: calc(50% + 50px);
+
+    @keyframes drawUp {
+      to {
+        height: 50px;
+        transform: translateY(-50px);
+      }
+    }
+  }
 `;
 
 const LineRight = styled.div`
   position: absolute;
 
   left: calc(51% - 100px);
-  top: 61%;
+  top: 51%;
 
   width: 0;
   height: 2px;
@@ -120,6 +199,27 @@ const LineRight = styled.div`
     left: calc(51% - 100px);
     top: 51%;
   }
+
+  @media (max-width: 1024px) {
+    left: calc(52% - 50px);
+    top: 50%;
+
+    @keyframes drawRight {
+      to {
+        width: 100px;
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    left: calc(56% - 50px);
+    top: 50%;
+    @keyframes drawRight {
+      to {
+        width: 50px;
+      }
+    }
+  }
 `;
 
 const ProfileArea = styled.div`
@@ -130,7 +230,7 @@ const ProfileArea = styled.div`
   width: 300px;
 
   left: calc(51% + 100px);
-  top: calc(61% - 70px);
+  top: calc(51% - 70px);
 
   opacity: 0;
 
@@ -145,6 +245,30 @@ const ProfileArea = styled.div`
   @media (max-width: 1728px) {
     left: calc(51% + 100px);
     top: calc(51% - 100px);
+  }
+
+  @media (max-width: 1024px) {
+    left: calc(52% + 50px);
+    top: calc(50% - 50px);
+
+    @keyframes showProfile {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -30%);
+
+    @keyframes showProfile {
+      to {
+        opacity: 1;
+      }
+    }
   }
 `;
 const ProfileName = styled.h1`

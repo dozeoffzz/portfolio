@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import background from "../assets/imgs/background.webp";
+import backgroundtablet from "../assets/imgs/backgroundtablet.webp";
+import backgroundphone from "../assets/imgs/backgroundphone.webp";
 import styled from "@emotion/styled";
 import choiwonhee from "../assets/imgs/choiwonhee.webp";
 import ResumeImg from "../assets/imgs/resumeimg.webp";
+import ResumeImgTablet from "../assets/imgs/resumeimgtablet.png";
+import ResumeImgPhone from "../assets/imgs/ResumeImgPhone.png";
+import illustrator from "../assets/icons/illustrator.svg";
+import photoshop from "../assets/icons/photoshop.svg";
+import figma from "../assets/icons/figma.svg";
+import html from "../assets/icons/html.svg";
+import css from "../assets/icons/css.svg";
+import react from "../assets/icons/react.svg";
 
 const Section = styled.div`
   background-image: url(${background});
@@ -10,6 +20,7 @@ const Section = styled.div`
   height: 100vh;
   display: flex;
   justify-content: space-between;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,19 +29,74 @@ const Section = styled.div`
 
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    background-image: url(${backgroundtablet});
+    flex-direction: column;
+    overflow: auto;
+  }
+  @media (max-width: 440px) {
+    background-image: url(${backgroundphone});
+  }
 `;
 
 const ResumeImgWrap = styled.img`
-  padding: 100px 50px 50px 50px;
+  padding-top: 100px;
   position: absolute;
   display: flex;
   justify-self: center;
   align-self: center;
   z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
 
   opacity: ${(props) => (props.hide ? 0 : 1)};
   transition: opacity 0.8s ease;
   pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+
+  @media (max-width: 1728px) {
+    padding: 100px 50px 50px 50px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`;
+const ResumeImgWrapTablet = styled.img`
+  display: none;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity: ${(props) => (props.hide ? 0 : 1)};
+  transition: opacity 0.8s ease;
+  pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+  @media (max-width: 440px) {
+    display: none;
+  }
+`;
+const ResumeImgWrapPhone = styled.img`
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+
+  opacity: ${(props) => (props.hide ? 0 : 1)};
+  transition: opacity 0.8s ease;
+  pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+
+  @media (max-width: 440px) {
+    display: flex;
+  }
 `;
 
 const ResumeCenterContainer = styled.div`
@@ -51,6 +117,15 @@ const ResumeCenterContainer = styled.div`
   opacity: ${(props) => (props.hide ? 0 : 1)};
   transition: opacity 0.8s ease;
   pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+
+  @media (max-width: 1024px) {
+    top: 40%;
+    width: 600px;
+  }
+  @media (max-width: 440px) {
+    top: 20%;
+    width: 350px;
+  }
 `;
 
 const ImacIcon = styled.div`
@@ -59,6 +134,10 @@ const ImacIcon = styled.div`
   border-bottom: 1px solid #0c0c0c;
   display: flex;
   gap: 20px;
+
+  @media (max-width: 440px) {
+    gap: 10px;
+  }
 `;
 const ResumeCenterText = styled.p`
   padding: 20px 0 10px 0;
@@ -80,6 +159,11 @@ const MoreAboutMe = styled.button`
   border-radius: 15px;
   border: 1px solid #0c0c0c;
   z-index: 18;
+
+  @media (max-width: 440px) {
+    right: -10px;
+    width: 200px;
+  }
 `;
 const MoreAboutMeText = styled.p`
   font-size: 20px;
@@ -106,10 +190,28 @@ const ResumeLeft = styled.div`
   align-items: center;
   padding-top: 100px;
   padding-left: 50px;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+    padding: 100px 30px 30px 0;
+  }
+  @media (max-width: 440px) {
+    justify-content: center;
+    padding: 50px;
+  }
 `;
 const ResumeLeftWrap = styled.div`
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 440px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 const ResumeProfile = styled.div`
@@ -149,12 +251,31 @@ const Introduce = styled.p`
   align-items: center;
   background-color: #00ff03;
   padding: 20px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  @media (max-width: 440px) {
+    display: none;
+  }
 `;
 const SkillLisence = styled.div`
   display: flex;
   align-items: flex-end;
   gap: 20px;
   margin-left: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 440px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
 `;
 const Skill = styled.div`
   display: flex;
@@ -172,7 +293,14 @@ const SkillLisenceText = styled.h3`
   padding: 10px;
   background-color: #00ff03;
   font-size: 18px;
-  width: 270px;
+  width: 300px;
+
+  @media (max-width: 1728px) {
+    width: 270px;
+  }
+  @media (max-width: 440px) {
+    width: 300px;
+  }
 `;
 
 const SkillText = styled.div`
@@ -180,10 +308,16 @@ const SkillText = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 270px;
+  width: 300px;
   height: 30px;
   background-color: #fafafa;
   font-size: 16px;
+  @media (max-width: 1728px) {
+    width: 270px;
+  }
+  @media (max-width: 440px) {
+    width: 300px;
+  }
 `;
 const LisenceText = styled(SkillText)``;
 
@@ -192,6 +326,21 @@ const ResumeRight = styled.div`
   display: flex;
   padding-top: 100px;
   width: 100%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding: 50px 0 100px 0;
+  }
+  @media (max-width: 440px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 150px;
+  }
 `;
 const Experience = styled.h3`
   display: flex;
@@ -200,6 +349,13 @@ const Experience = styled.h3`
   background-color: #00ff03;
   width: 100%;
   height: 30px;
+
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (max-width: 440px) {
+    width: 90%;
+  }
 `;
 
 const HeightLine = styled.div`
@@ -209,6 +365,13 @@ const HeightLine = styled.div`
   bottom: 0;
   width: 2px;
   background-color: #0c0c0c;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  @media (max-width: 440px) {
+    display: none;
+  }
 `;
 
 const ExperienceSince = styled.div`
@@ -216,14 +379,38 @@ const ExperienceSince = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
+  gap: 50px;
   left: 110px;
-  top: 150px;
+  top: 200px;
   color: #fafafa;
+
+  @media (max-width: 1728px) {
+    gap: 30px;
+    top: 150px;
+  }
+
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    padding: 0 100px;
+  }
+  @media (max-width: 440px) {
+    position: relative;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 const ExperienceText = styled.div`
   padding-left: 20px;
   font-size: 14px;
+
+  @media (max-width: 440px) {
+    margin-left: 0;
+  }
 `;
 const Since = styled.h3`
   position: relative;
@@ -240,6 +427,10 @@ const Since = styled.h3`
     left: -30px;
     top: 50%;
     transform: translateY(-50%);
+
+    @media (max-width: 440px) {
+      display: none;
+    }
   }
 `;
 
@@ -252,6 +443,8 @@ export default function ResumePage() {
   return (
     <Section>
       <ResumeImgWrap src={ResumeImg} alt="resumeimg" hide={none} />
+      <ResumeImgWrapTablet src={ResumeImgTablet} alt="resumeimg" hide={none} />
+      <ResumeImgWrapPhone src={ResumeImgPhone} alt="resumeimg" hide={none} />
       <ResumeCenterContainer hide={none}>
         <ImacIcon>
           <ImacIconRed />
@@ -297,38 +490,38 @@ export default function ResumePage() {
               <Skill>
                 <SkillLisenceText>SKILLS</SkillLisenceText>
                 <SkillText>
-                  <img />
+                  <img src={illustrator} />
                   <p>Adobe Illustrator</p>
                 </SkillText>
                 <SkillText>
-                  <img />
+                  <img src={photoshop} />
                   <p>Adobe Photoshop</p>
                 </SkillText>
                 <SkillText>
-                  <img />
+                  <img src={figma} />
                   <p>Figma</p>
                 </SkillText>
                 <SkillText>
-                  <img />
+                  <img src={html} />
                   <p>Visual Studio Code HTML</p>
                 </SkillText>
                 <SkillText>
-                  <img />
+                  <img src={css} />
                   <p>Visual Studio Code CSS</p>
                 </SkillText>
                 <SkillText>
-                  <img />
+                  <img src={react} />
                   <p>Visual Studio Code REACT</p>
                 </SkillText>
               </Skill>
               <Lisence>
                 <SkillLisenceText>LISENCE</SkillLisenceText>
                 <LisenceText>
-                  <img />
+                  <img src={illustrator} />
                   <p>GTQ i 1 급</p>
                 </LisenceText>
                 <LisenceText>
-                  <img />
+                  <img src={photoshop} />
                   <p>GTQ 1 급</p>
                 </LisenceText>
                 <LisenceText>
@@ -374,7 +567,7 @@ export default function ResumePage() {
           <div>
             <Since>2024</Since>
             <ExperienceText>
-              <p>1학기 캡스톤디자인 경진대회최 우수상</p>
+              <p>1학기 캡스톤디자인 경진대회 최우수상</p>
               <p>로컬 크리에이터 양성 아카데미 대상</p>
               <p>제 16회 실내디자인협회 주제공모전 입선</p>
               <p>2학기 캡스톤디자인 경진대회 장려상</p>
@@ -385,7 +578,7 @@ export default function ResumePage() {
             <Since>2025</Since>
             <ExperienceText>
               <p>고즈넉디자인 스튜디오 근무 </p>
-              <p>[이스트캠프] 오르미 프론트엔드 부트캠프 11기 </p>
+              <p>[이스트캠프] 오르미 프론트엔드 부트캠프 11기 - 25년 11월 ~ 26년 4월</p>
             </ExperienceText>
           </div>
         </ExperienceSince>

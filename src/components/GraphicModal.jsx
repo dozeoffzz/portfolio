@@ -20,9 +20,19 @@ const ImgContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 1720px;
+  max-width: 1920px;
   height: 100vh;
   overflow: hidden;
+
+  @media (max-width: 1728px) {
+    max-width: 1720px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 1024px;
+  }
+  @media (max-width: 440px) {
+    max-width: 440px;
+  }
 `;
 
 const CloseBtn = styled.div`
@@ -34,6 +44,16 @@ const CloseBtn = styled.div`
 
   img {
     width: 36px;
+  }
+
+  @media (max-width: 1024px) {
+    top: 200px;
+    right: 50px;
+  }
+  @media (max-width: 440px) {
+    width: 30px;
+    right: 10px;
+    top: 150px;
   }
 `;
 
@@ -54,6 +74,13 @@ const CenterImg = styled.img`
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 600px;
+
+  @media (max-width: 1024px) {
+    width: 600px;
+  }
+  @media (max-width: 440px) {
+    width: 300px;
+  }
 `;
 
 const PrevImg = styled.img`
@@ -64,6 +91,15 @@ const PrevImg = styled.img`
   width: 600px;
   opacity: 0.5;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    left: -550px;
+    width: 600px;
+  }
+  @media (max-width: 440px) {
+    left: -260px;
+    width: 300px;
+  }
 `;
 
 const NextImg = styled.img`
@@ -74,6 +110,15 @@ const NextImg = styled.img`
   width: 600px;
   opacity: 0.5;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    right: -550px;
+    width: 600px;
+  }
+  @media (max-width: 440px) {
+    right: -260px;
+    width: 300px;
+  }
 `;
 
 const ImgWrap = styled.div`
@@ -96,19 +141,37 @@ const AlbumInfo = styled.div`
   flex-direction: column;
   color: #fafafa;
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    left: 50px;
+    bottom: 100px;
+  }
+  @media (max-width: 440px) {
+    left: 30px;
+    bottom: 130px;
+  }
 `;
 
 const AlbumDesign = styled.h2`
   font-size: 52px;
+  @media (max-width: 440px) {
+    font-size: 24px;
+  }
 `;
 const AlbumName = styled.p`
   font-size: 28px;
   font-weight: 500;
   font-family: "Pretendard";
+  @media (max-width: 440px) {
+    font-size: 20px;
+  }
 `;
 const AlbumInfoText = styled.p`
   font-size: 24px;
   font-family: "Pretendard";
+  @media (max-width: 440px) {
+    font-size: 16px;
+  }
 `;
 
 export default function GraphicModal({ isOpen, onClose, item, data, index }) {

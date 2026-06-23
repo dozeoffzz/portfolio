@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import background from "../assets/imgs/background.webp";
+import backgroundtablet from "../assets/imgs/backgroundtablet.webp";
+import backgroundphone from "../assets/imgs/backgroundphone.webp";
 import { AllBanner } from "../apis/Banner";
 import BannerModal from "../components/BannerModal";
 
@@ -16,6 +18,13 @@ const Section = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 50px;
+
+  @media (max-width: 1024px) {
+    background-image: url(${backgroundtablet});
+  }
+  @media (max-width: 440px) {
+    background-image: url(${backgroundphone});
+  }
 `;
 
 const BannerContainer = styled.div`
@@ -24,8 +33,20 @@ const BannerContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   max-height: 100vh;
+
+  @media (max-width: 1728px) {
+    max-width: 900px;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+  }
+  @media (max-width: 440px) {
+    max-width: 350px;
+  }
 `;
 
 const BannerWrap = styled.div`

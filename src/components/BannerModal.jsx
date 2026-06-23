@@ -19,9 +19,19 @@ const ImgContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 1720px;
+  max-width: 1920px;
   height: 100vh;
   overflow: hidden;
+
+  @media (max-width: 1728px) {
+    max-width: 1720px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 1024px;
+  }
+  @media (max-width: 440px) {
+    max-width: 440px;
+  }
 `;
 
 const CloseBtn = styled.div`
@@ -34,6 +44,14 @@ const CloseBtn = styled.div`
   img {
     width: 36px;
   }
+  @media (max-width: 1024px) {
+    top: 200px;
+    right: 50px;
+  }
+  @media (max-width: 440px) {
+    width: 30px;
+    right: 10px;
+  }
 `;
 
 const ImgTrack = styled.div`
@@ -44,6 +62,12 @@ const ImgTrack = styled.div`
   align-items: center;
   gap: 100px;
   overflow: hidden;
+  @media (max-width: 1024px) {
+    gap: 50px;
+  }
+  @media (max-width: 440px) {
+    gap: 50px;
+  }
 `;
 
 const CenterImg = styled.img`
@@ -53,6 +77,13 @@ const CenterImg = styled.img`
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 1100px;
+
+  @media (max-width: 1024px) {
+    width: 700px;
+  }
+  @media (max-width: 440px) {
+    width: 300px;
+  }
 `;
 
 const PrevImg = styled.img`
@@ -63,6 +94,15 @@ const PrevImg = styled.img`
   width: 1100px;
   opacity: 0.5;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    left: -550px;
+    width: 600px;
+  }
+  @media (max-width: 440px) {
+    left: -230px;
+    width: 250px;
+  }
 `;
 
 const NextImg = styled.img`
@@ -73,6 +113,15 @@ const NextImg = styled.img`
   width: 1100px;
   opacity: 0.5;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    right: -550px;
+    width: 600px;
+  }
+  @media (max-width: 440px) {
+    right: -230px;
+    width: 250px;
+  }
 `;
 
 const ImgWrap = styled.div`

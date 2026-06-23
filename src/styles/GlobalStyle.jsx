@@ -78,6 +78,7 @@ const globalStyles = css`
     transition:
       background-color 0.3s,
       color 0.3s;
+    background-color: #0c0c0c;
   }
   ol,
   li ul {

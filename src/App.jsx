@@ -8,6 +8,7 @@ import BannerDesignPage from "./pages/BannerDesignPage";
 import GraphicDesignPage from "./pages/GraphicDesignPage";
 import ContactPage from "./pages/ContactPage";
 import { TimerContext } from "./components/TimerContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
@@ -23,17 +24,20 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <TimerContext.Provider value={elapsedSeconds}>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/resume" element={<ResumePage />} />
-          <Route path="/webdesign" element={<WebDesignPage />} />
-          <Route path="/bannerdesign" element={<BannerDesignPage />} />
-          <Route path="/graphicdesign" element={<GraphicDesignPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Route>
-      </Routes>
-    </TimerContext.Provider>
+    <>
+      <ScrollToTop />
+      <TimerContext.Provider value={elapsedSeconds}>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+            <Route path="/webdesign" element={<WebDesignPage />} />
+            <Route path="/bannerdesign" element={<BannerDesignPage />} />
+            <Route path="/graphicdesign" element={<GraphicDesignPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Route>
+        </Routes>
+      </TimerContext.Provider>
+    </>
   );
 }

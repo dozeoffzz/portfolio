@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import background from "../assets/imgs/background.webp";
+import backgroundtablet from "../assets/imgs/backgroundtablet.webp";
+import backgroundphone from "../assets/imgs/backgroundphone.webp";
 import { AllGraphic } from "../apis/Graphic";
 import GraphicModal from "../components/GraphicModal";
 
@@ -16,6 +18,14 @@ const Section = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media (max-width: 1024px) {
+    background-image: url(${backgroundtablet});
+  }
+  @media (max-width: 440px) {
+    background-image: url(${backgroundphone});
+    padding: 0;
+  }
 `;
 const GraphicContainer = styled.div`
   display: grid;
@@ -23,9 +33,13 @@ const GraphicContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   max-height: 100vh;
   gap: 10px;
+
+  @media (max-width: 1728px) {
+    max-width: 800px;
+  }
 `;
 
 const GraphicWrap = styled.div`
