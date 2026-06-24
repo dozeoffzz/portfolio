@@ -10,7 +10,7 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #0c0c0c;
+  background-color: #0c0c0cf8;
   z-index: 20;
 `;
 
@@ -135,7 +135,7 @@ const ImgWrap = styled.div`
 `;
 const AlbumInfo = styled.div`
   position: absolute;
-  left: 100px;
+  left: 150px;
   bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -153,7 +153,7 @@ const AlbumInfo = styled.div`
 `;
 
 const AlbumDesign = styled.h2`
-  font-size: 52px;
+  font-size: 44px;
   @media (max-width: 440px) {
     font-size: 24px;
   }
@@ -165,6 +165,11 @@ const AlbumName = styled.p`
   @media (max-width: 440px) {
     font-size: 20px;
   }
+`;
+const AlbumStyle = styled.p`
+  font-family: "Pretendard";
+  font-size: 14px;
+  color: #696969;
 `;
 const AlbumInfoText = styled.p`
   font-size: 24px;
@@ -208,6 +213,7 @@ export default function GraphicModal({ isOpen, onClose, item, data, index }) {
         <AlbumInfo>
           <AlbumDesign>Album Cover Design</AlbumDesign>
           <AlbumName>{current.name}</AlbumName>
+          <AlbumStyle>*곡을 듣고 곡의 어울리는 분위기를 생각해 디자인 하였습니다.</AlbumStyle>
           <AlbumInfoText>{current.info}</AlbumInfoText>
         </AlbumInfo>
       </ImgContainer>

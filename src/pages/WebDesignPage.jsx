@@ -30,8 +30,8 @@ const LeftPanel = styled.div`
   color: #fafafa;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 `;
 
 const ProjectWrap = styled.div`
@@ -39,6 +39,11 @@ const ProjectWrap = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+`;
+const ProjectNameKind = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
 `;
 const ProjectName = styled.h2`
   font-size: 36px;
@@ -58,6 +63,10 @@ const Responsiveimg = styled.img`
   justify-self: center;
   align-self: center;
   width: 700px;
+
+  @media (max-width: 1728px) {
+    width: 400px;
+  }
 `;
 const VistSite = styled(NavLink)`
   width: 100%;
@@ -86,6 +95,10 @@ const StackWrap = styled.div`
   left: 0;
   top: 60%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 1728px) {
+    top: 65%;
+  }
 `;
 
 const ProjectImage = styled.div`
@@ -99,6 +112,10 @@ const ProjectImage = styled.div`
 
   &:hover {
     transform: translateY(-40px) skewY(15deg);
+  }
+
+  @media (max-width: 1728px) {
+    width: 350px;
   }
 `;
 
@@ -116,8 +133,10 @@ export default function WebDesignPage() {
     <Section>
       <LeftPanel>
         <ProjectWrap>
-          <ProjectName>{selectedProject.name}</ProjectName>
-          <ProjectKind>{selectedProject.kind}</ProjectKind>
+          <ProjectNameKind>
+            <ProjectName>{selectedProject.name}</ProjectName>
+            <ProjectKind>{selectedProject.kind}</ProjectKind>
+          </ProjectNameKind>
           <ProjectTeam>{selectedProject.team}</ProjectTeam>
           <ProjectInfo>{selectedProject.info}</ProjectInfo>
           <Responsiveimg src={selectedProject.responsiveimg} />

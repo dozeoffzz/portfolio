@@ -9,7 +9,7 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #0c0c0c;
+  background-color: #0c0c0cf8;
   z-index: 20;
 `;
 

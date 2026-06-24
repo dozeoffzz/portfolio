@@ -13,12 +13,12 @@ import modalgraphic5 from "../assets/graphics/modalgraphic5.webp";
 import modalgraphic6 from "../assets/graphics/modalgraphic6.webp";
 
 export const AllGraphic = [
-  { id: 1, name: "adf", info: "asdf", backimg: graphic1, img: modalgraphic1, position: "left" },
-  { id: 2, name: "adf", info: "asdf", backimg: graphic2, img: modalgraphic2, position: "center" },
-  { id: 3, name: "adf", info: "asdf", backimg: graphic3, img: modalgraphic3, position: "right" },
-  { id: 4, name: "adf", info: "asdf", backimg: graphic4, img: modalgraphic4, position: "left" },
+  { id: 1, name: "이승준-모자", info: "asdf", backimg: graphic1, img: modalgraphic1, position: "left" },
+  { id: 2, name: "이승준-Try Me", info: "asdf", backimg: graphic2, img: modalgraphic2, position: "center" },
+  { id: 3, name: "Quovadis-Eclipse", info: "asdf", backimg: graphic3, img: modalgraphic3, position: "right" },
+  { id: 4, name: "nightbirdforyou-Moonlight", info: "asdf", backimg: graphic4, img: modalgraphic4, position: "left" },
   { id: 5, name: "adf", info: "asdf", backimg: graphic5, img: modalgraphic5, position: "center" },
-  { id: 6, name: "adf", info: "asdf", backimg: graphic6, img: modalgraphic6, position: "right" },
+  { id: 6, name: "이래-고요", info: "asdf", backimg: graphic6, img: modalgraphic6, position: "right" },
 ];
 export const ModalGraphic = [
   { id: 1, name: "adf", info: "asdf", img: modalgraphic1 },

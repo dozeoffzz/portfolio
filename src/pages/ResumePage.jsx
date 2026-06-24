@@ -109,10 +109,11 @@ const ResumeCenterContainer = styled.div`
   z-index: 14;
   background-color: #fafafa;
   border-radius: 30px;
-  border: 1px solid #0c0c0c;
+  border: 2px solid #0c0c0c;
   width: 860px;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 4px 4px 16px#0c0c0c;
 
   opacity: ${(props) => (props.hide ? 0 : 1)};
   transition: opacity 0.8s ease;
@@ -157,8 +158,9 @@ const MoreAboutMe = styled.button`
   align-items: center;
   background-color: #fafafa;
   border-radius: 15px;
-  border: 1px solid #0c0c0c;
+  border: 2px solid #0c0c0c;
   z-index: 18;
+  box-shadow: 4px 4px 16px#0c0c0c;
 
   @media (max-width: 440px) {
     right: -10px;
@@ -220,10 +222,15 @@ const ResumeProfile = styled.div`
   gap: 3px;
 `;
 
+const BackBtn = styled.button`
+  display: flex;
+`;
+
 const ProfileName = styled.h2`
   padding: 10px;
   background-color: #00ff03;
   font-size: 18px;
+  width: 100%;
 `;
 
 const ProfileGender = styled.p`
@@ -438,7 +445,7 @@ export default function ResumePage() {
   const [none, isNone] = useState(false);
 
   const handleView = () => {
-    isNone(true);
+    isNone((prev) => !prev);
   };
   return (
     <Section>
@@ -470,6 +477,13 @@ export default function ResumePage() {
       <ResumeLeft>
         <ResumeLeftWrap>
           <ResumeProfile>
+            <BackBtn onClick={handleView}>
+              <ImacIcon>
+                <ImacIconRed />
+                <ImacIconYellow />
+                <ImacIconGreen />
+              </ImacIcon>
+            </BackBtn>
             <ProfileName>최원희</ProfileName>
             <img src={choiwonhee} />
             <ProfileGender>Gender : male</ProfileGender>
