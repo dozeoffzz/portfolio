@@ -141,6 +141,7 @@ const AlbumInfo = styled.div`
   flex-direction: column;
   color: #fafafa;
   z-index: 10;
+  gap: 10px;
 
   @media (max-width: 1024px) {
     left: 50px;
@@ -172,7 +173,7 @@ const AlbumStyle = styled.p`
   color: #696969;
 `;
 const AlbumInfoText = styled.p`
-  font-size: 24px;
+  font-size: 16px;
   font-family: "Pretendard";
   @media (max-width: 440px) {
     font-size: 16px;
@@ -213,8 +214,13 @@ export default function GraphicModal({ isOpen, onClose, item, data, index }) {
         <AlbumInfo>
           <AlbumDesign>Album Cover Design</AlbumDesign>
           <AlbumName>{current.name}</AlbumName>
+          <AlbumInfoText>
+            디자인 연습을 하고자 SNS에 글을 올려 앨범 커버를 제작해 주는 경험을 했습니다.
+            <br />그 과정에서 기획, 소통을 통한 피드백, 일정 협의 등 디자인을 위한 여러 단계를 알게 되었습니다.
+            <br />
+            실력이 부족해 모든 분께 도움을 드리진 못했지만, 제 디자인을 받으신 분들을 보니 뿌듯했습니다.
+          </AlbumInfoText>
           <AlbumStyle>*곡을 듣고 곡의 어울리는 분위기를 생각해 디자인 하였습니다.</AlbumStyle>
-          <AlbumInfoText>{current.info}</AlbumInfoText>
         </AlbumInfo>
       </ImgContainer>
     </Overlay>,

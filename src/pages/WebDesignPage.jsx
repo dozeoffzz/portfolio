@@ -62,7 +62,8 @@ const Responsiveimg = styled.img`
   display: flex;
   justify-self: center;
   align-self: center;
-  width: 700px;
+  width: 500px;
+  margin: 40px 0;
 
   @media (max-width: 1728px) {
     width: 400px;
@@ -133,14 +134,14 @@ export default function WebDesignPage() {
     <Section>
       <LeftPanel>
         <ProjectWrap>
-          <ProjectNameKind>
-            <ProjectName>{selectedProject.name}</ProjectName>
-            <ProjectKind>{selectedProject.kind}</ProjectKind>
-          </ProjectNameKind>
+          <ProjectName>{selectedProject.name}</ProjectName>
+          <ProjectKind>{selectedProject.kind}</ProjectKind>
           <ProjectTeam>{selectedProject.team}</ProjectTeam>
           <ProjectInfo>{selectedProject.info}</ProjectInfo>
           <Responsiveimg src={selectedProject.responsiveimg} />
-          <VistSite>Visit the Website</VistSite>
+          <VistSite to={selectedProject.link} target="_blank" rel="noopener noreferrer">
+            Visit the Website
+          </VistSite>
         </ProjectWrap>
       </LeftPanel>
       <RightPanel>

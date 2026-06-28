@@ -566,7 +566,7 @@ export default function ResumePage() {
             <Since>2022</Since>
             <ExperienceText>
               <p>제 41회 대한민국디자인문화대전 전국공모전 특선</p>
-              <p>제 8회 전국한색 스마트폰 공간사진 공모전 특선</p>
+              <p>제 8회 전국 학생 스마트폰 공간사진 공모전 특선</p>
               <p>제 17회 한국공간디자인 전국공모전 입선</p>
             </ExperienceText>
           </div>

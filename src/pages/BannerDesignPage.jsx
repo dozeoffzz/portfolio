@@ -33,6 +33,7 @@ const BannerContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 20px;
   max-width: 1200px;
   max-height: 100vh;
 
@@ -51,7 +52,6 @@ const BannerContainer = styled.div`
 
 const BannerWrap = styled.div`
   position: relative;
-  aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
   align-items: center;

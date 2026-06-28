@@ -3,6 +3,7 @@ import bannerfrontimg2 from "../assets/banners/bannerfrontimg2.webp";
 import bannerfrontimg3 from "../assets/banners/bannerfrontimg3.webp";
 import bannerfrontimg4 from "../assets/banners/bannerfrontimg4.webp";
 import bannerfrontimg5 from "../assets/banners/bannerfrontimg5.webp";
+import bannerfrontimg6 from "../assets/banners/bannerfrontimg6.webp";
 
 import bannerbackimg1 from "../assets/banners/bannerbackimg1.webp";
 import bannerbackimg2 from "../assets/banners/bannerbackimg2.webp";
@@ -17,5 +18,5 @@ export const AllBanner = [
   { id: 3, name: "adf", info: "asdf", backimg: bannerbackimg3, img: bannerfrontimg3, position: "right" },
   { id: 4, name: "adf", info: "asdf", backimg: bannerbackimg4, img: bannerfrontimg4, position: "left" },
   { id: 5, name: "adf", info: "asdf", backimg: bannerbackimg5, img: bannerfrontimg5, position: "center" },
-  { id: 6, name: "adf", info: "asdf", backimg: bannerbackimg6, img: bannerfrontimg5, position: "right" },
+  { id: 6, name: "adf", info: "asdf", backimg: bannerbackimg6, img: bannerfrontimg6, position: "right" },
 ];
