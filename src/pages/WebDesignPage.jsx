@@ -40,22 +40,28 @@ const ProjectWrap = styled.div`
   gap: 10px;
   width: 100%;
 `;
-const ProjectNameKind = styled.div`
+const ProjectNameKindTeam = styled.div`
   display: flex;
-  align-items: center;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 const ProjectName = styled.h2`
   font-size: 36px;
 `;
+const ProjectKindTeam = styled.div`
+  display: flex;
+  gap: 20px;
+`;
 const ProjectKind = styled.p`
-  font-size: 28px;
+  color: #d9d9d9b5;
+  font-size: 20px;
 `;
 const ProjectTeam = styled.p`
-  font-size: 24px;
+  color: #d9d9d9b5;
+  font-size: 20px;
 `;
 const ProjectInfo = styled.p`
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Pretendard";
 `;
 const Responsiveimg = styled.img`
@@ -67,6 +73,7 @@ const Responsiveimg = styled.img`
 
   @media (max-width: 1728px) {
     width: 400px;
+    margin: 20px 0;
   }
 `;
 const VistSite = styled(NavLink)`
@@ -134,9 +141,13 @@ export default function WebDesignPage() {
     <Section>
       <LeftPanel>
         <ProjectWrap>
-          <ProjectName>{selectedProject.name}</ProjectName>
-          <ProjectKind>{selectedProject.kind}</ProjectKind>
-          <ProjectTeam>{selectedProject.team}</ProjectTeam>
+          <ProjectNameKindTeam>
+            <ProjectName>{selectedProject.name}</ProjectName>
+            <ProjectKindTeam>
+              <ProjectKind>- {selectedProject.kind}</ProjectKind>
+              <ProjectTeam>- {selectedProject.team}</ProjectTeam>
+            </ProjectKindTeam>
+          </ProjectNameKindTeam>
           <ProjectInfo>{selectedProject.info}</ProjectInfo>
           <Responsiveimg src={selectedProject.responsiveimg} />
           <VistSite to={selectedProject.link} target="_blank" rel="noopener noreferrer">

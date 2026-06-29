@@ -52,8 +52,8 @@ export const AllWeb = [
   },
   {
     id: 5,
-    name: "ToDo List",
-    kind: "Funiture Shop",
+    name: "ToDo",
+    kind: "ToDo List",
     team: "Team Project",
     info: "프론트엔드 부트캠프에서 진행한 두번째 프로젝트 입니다. HTML, CSS, JAVASCRIPT를 통해 TodoList를 제작하는 프로젝트 였습니다. 디자인, 퍼블리싱을 담당해 진행하였습니다. 우측상단에 현재 시간을 보여줌으로써 사용자의 시선이 머무를 수 있게 하였습니다.",
     img: webtodo,
